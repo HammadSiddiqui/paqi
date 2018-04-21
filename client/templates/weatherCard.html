@@ -1,0 +1,20 @@
+<template name='weatherCard'>
+    <div class="weather-card madrid">
+        <a href='/city/{{city}}?state={{state}}'><span class="city-link"></span></a>
+        <div class="weather-icon"><img src={{getWeatherIcon}}  alt=""></div>
+        <p class="timestamp">{{ timestamp }}</p>
+        <h2>{{pm25}}<span class="small-text">PM2.5</span></h2>
+        <h1>{{getCityDataOnClient city state}}<span class="small-text">AQI</span></h1>
+        <p>{{city}}</p>
+    </div>
+</template>
+
+<template name='weatherCardStation'>
+    <div class="weather-card madrid">
+        <a href='/city/{{city}}?state={{state}}&station={{station}}'><span class="city-link"></span></a>
+        <div class="weather-icon"><img src={{getWeatherIcon}}  alt=""></div>
+        <h2>{{pm25}}<span class="small-text">PM2.5</span></h2>
+        <h1>{{getStationDataOnClient city state station}}<span class="small-text">AQI</span></h1>
+        <p>{{station}}</p>
+    </div>
+</template>

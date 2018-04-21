@@ -1,0 +1,38 @@
+<template name="city">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            {{> header}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="mt-4">{{city}}</h1>
+        </div>
+    </div>
+</div>
+<div class="weather-wrapper">
+          
+            {{#each stationObj in getStationsNameOnClient city=city state=state }}
+                {{> weatherCardStation city=city state=state station=stationObj.station}}
+            
+            {{/each}}
+    
+</div>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Analysis</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {{> cityAnalysisCharts city=city state=state}}
+        </div>
+    </div>
+</div>
+
+
+</template>
