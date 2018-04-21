@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import {getStates, getCityData, getCities} from './architecture';
 
 Meteor.startup(() => {
   // code to run on server at startup

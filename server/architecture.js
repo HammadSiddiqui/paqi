@@ -1,5 +1,7 @@
+
+var exports = module.exports = {};
 //Get all states
-function getStates(callback) {
+exports.getStates = function (callback) {
     var states = [];
     const result = HTTP.call('GET', 'http://api.airvisual.com/v2/states', {
           
@@ -27,7 +29,7 @@ function getStates(callback) {
 }
 
 //Get all cities
-function getCities(states, callback) {
+exports.getCities = function (states, callback) {
     var stateCityList = [];
     states.forEach((state, index, states) => {
         var cities = [];
@@ -68,7 +70,7 @@ function getCities(states, callback) {
  
 }
 //Get all Station Names
-function getStationNames(cityStates, callback) {
+exports.getStationNames = function(cityStates, callback) {
     var cityStateStaionsList = []
     cityStates.forEach((cityState, index, citiStates) => {
         cityState.cities.forEach(city => {
@@ -119,7 +121,7 @@ function getStationNames(cityStates, callback) {
  
 }
 //Get all city level data
-function getCityData(cityStates, callback) {
+exports.getCityData = function(cityStates, callback) {
     var cityStateDataList = []
     cityStates.forEach((cityState, index, citiStates) => {
         cityState.cities.forEach(city => {
