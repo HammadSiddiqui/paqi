@@ -27,7 +27,8 @@ Template.weatherCardStation.helpers({
     timestamp : function () {
         if(Template.instance().cardObj.get()) {
             let date = Template.instance().cardObj.get().current.pollution.ts;
-            let fromNow = moment(date, "YYYYMMDD").fromNow();
+            let fromNow = moment(date).fromNow();
+            
             return fromNow;
         }
     }

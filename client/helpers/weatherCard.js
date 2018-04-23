@@ -19,7 +19,7 @@ Template.weatherCard.helpers({
              }
           });
  */
-         let data = ReactiveMethod.call('getCityData', city.toLowerCase(), state.toLowerCase()) ; 
+        let data = ReactiveMethod.call('getCityData', city.toLowerCase(), state.toLowerCase()) ; 
         if(data){
             console.log(data);
             Template.instance().cardObj.set(data);
@@ -51,7 +51,7 @@ Template.weatherCard.helpers({
      timestamp : function () {
          if(Template.instance().cardObj.get()) {
              let date = Template.instance().cardObj.get().current.pollution.ts;
-             let fromNow = moment(date, "YYYYMMDD").fromNow();
+             let fromNow = moment(date).fromNow();
              return fromNow;
          }
      }

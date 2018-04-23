@@ -25,3 +25,4 @@ iron:router
 session
 simple:reactive-method
 reactive-dict
+jquery
